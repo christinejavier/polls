@@ -5,7 +5,7 @@ import QuestionDetails from './QuestionDetails';
 import { getQuestionDetails } from '../actions/questions'
 
 const formatTime = time => {
-  return new Date(time).toLocaleDateString();
+  return new Date(time).toUTCString();
 }
 
 class QuestionsList extends Component {
@@ -29,7 +29,7 @@ class QuestionsList extends Component {
         onClick={() => this.viewQuestionDetails(question.url)}
       >
         <header className="question-header">{ question.question }</header>
-        <span>Published at { formatTime(question.published_at) }</span>
+        <span>Published at: { formatTime(question.published_at) }</span>
         <span>Number of Choices: { question.choices.length }</span>
       </div>
       )
