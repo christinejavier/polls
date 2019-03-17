@@ -12,8 +12,17 @@ class ChoicesList extends Component {
       selected: false,
     }
 
+    this.getPercentOfAllVotes = this.getPercentOfAllVotes.bind(this);
     this.handleChoiceSelection = this.handleChoiceSelection.bind(this);
     this.renderChoices = this.renderChoices.bind(this);
+  }
+
+  getPercentOfAllVotes(choice) {
+    let numOfCurrentChoiceVotes = choice.votes;
+    let numOfTotalVotes = 0;
+    this.props.choices.forEach(choice => numOfTotalVotes += choice.votes);
+
+    return ((numOfCurrentChoiceVotes/numOfTotalVotes) * 100).toFixed(2);
   }
 
   handleChoiceSelection(choice) {
@@ -35,7 +44,10 @@ class ChoicesList extends Component {
             onClick={() => handleChoiceSelection(choice)}
             selected={this.state.selected}
           >
-            <ListItemText primary={choice.choice} secondary={`Votes: ${choice.votes}`} />
+            <ListItemText
+              primary={choice.choice}
+              secondary={`Votes: ${choice.votes}, ${this.getPercentOfAllVotes(choice)}% of all votes`}
+            />
           </ListItem>
           <Divider/>
         </Fragment>
