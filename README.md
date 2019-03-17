@@ -9,6 +9,8 @@ At this time, Polls can only be used via local hosting (see instruction below fo
 Documentation for the API is available at http://docs.pollsapi.apiary.io/.
 Refer to the documentation for details on how to query the API.
 
+![](demo/poll-save.gif)
+
 ## Step-by-step guide to viewing this application locally
 1. Clone in repository via running `git clone git@github.com:christinejavier/polls.git`
 2. cd into `polls` directory
