@@ -74,7 +74,7 @@ class QuestionsDetails extends Component {
               <CloseIcon />
             </IconButton>
             <Typography variant="h6" color="inherit" className={classes.flex}>
-              Questions Details
+              {`Questions Details: ${questionDetails.question}`}
             </Typography>
             {
               <Button color="inherit" onClick={this.handleSave}>
