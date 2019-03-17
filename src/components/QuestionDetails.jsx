@@ -78,7 +78,7 @@ class QuestionsDetails extends Component {
             </Typography>
             {
               <Button color="inherit" onClick={this.handleSave}>
-                Save
+                Save Vote
               </Button>
             }
           </Toolbar>
